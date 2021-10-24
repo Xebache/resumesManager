@@ -1,0 +1,11 @@
+.skill {
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+
+    .skill__info {
+        flex-basis: 80%;
+    }
+}

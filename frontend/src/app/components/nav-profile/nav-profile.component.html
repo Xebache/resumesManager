@@ -1,0 +1,10 @@
+<div *ngIf="authService.currentUser">
+    <button mat-button [matMenuTriggerFor]="menu"><img class="avatar avatar--sm" src="{{authService.currentUser.featuredImage}}" /></button>
+    <mat-menu #menu="matMenu">
+        <button *ngIf="authService.currentUser" mat-menu-item>Logged as <span>{{authService.currentUser.pseudo}}</span></button>
+        <mat-divider></mat-divider>
+        <button *ngIf="authService.currentUser" mat-menu-item><a class="nav-link text-dark text-center" [routerLink]="['/profile/', authService.currentUser.pseudo]">Profile</a></button>
+        <mat-divider></mat-divider>
+        <button *ngIf="authService.currentUser" mat-menu-item class="text-center" (click)="logoutHandler()">Sign Out</button>
+    </mat-menu>
+</div>

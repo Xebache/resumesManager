@@ -1,0 +1,29 @@
+<p *ngIf="!user"><mat-progress-bar mode="buffer"></mat-progress-bar></p>
+<div class="profile my-md">
+  <div class="container" *ngIf="user">
+    <div class="layout">
+      <div class="column column--1of2">
+        <div class="card text-center">
+          <div class="card__body">
+            <img class="avatar avatar--xl" src="{{user.featuredImage}}" />
+            <h2 class="profile__pseudo">{{user.pseudo}}</h2>
+            <p class="profile__name">{{user.firstname}} {{user.lastname}}</p>
+            <p class="profile__info" *ngIf="user.birthdate">Born on {{user.birthdateFormated}}</p>
+            <a href="mailto:{{user.email}}" class="profile__link"><mat-icon>email</mat-icon><span>{{user.email}}</span></a>
+            <button mat-stroked-button (click)="edit(user)">Edit profile</button>
+          </div>
+        </div>
+      </div>
+      <div class="column column--2of2 card">
+        <div class="resInfo card__body">
+          <h3 class="resInfo__title">About Me</h3>
+          <p>Pour-over pork belly pickled, echo park succulents scenester gluten-free vaporware ugh. YOLO aesthetic microdosing helvetica cliche, la croix street art typewriter blue bottle ramps 8-bit fingerstache.</p>
+        </div>
+        <app-profile-skills></app-profile-skills>
+        <app-profile-experience></app-profile-experience>
+        <app-profile-education></app-profile-education>
+        <app-profile-language></app-profile-language>
+      </div>
+    </div>
+  </div>
+</div>

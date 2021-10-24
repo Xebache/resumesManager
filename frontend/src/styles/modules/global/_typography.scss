@@ -1,0 +1,36 @@
+* {
+    text-rendering: optimizeLegibility;
+    color: inherit;
+    font-family: var(--font-base);
+    font-size: inherit;
+  }
+  
+  html {
+    font-size: 50%;
+    height: 100%;
+  }
+  
+  @media only screen and (min-width: 480px) {
+    html {
+      font-size: 56.25%;
+    }
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    html {
+      font-size: 75%;
+    }
+  }
+  
+  @media only screen and (min-width: 2100px) {
+    html {
+      font-size: 100%;
+    }
+  }
+  
+  body {
+    line-height: 1.6;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: var(--color-text);
+  }

@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light mb-3">
+    <div class="container">
+        <a class="navbar-brand" [routerLink]="['/']">
+            Upcoming project
+            <svg viewBox="0 0 827 14">
+                <path d="M2.91797 10.5792C55.7064 3.59041 113.634 6.37819 166.738 3.44832C196.643 1.79839 226.811 3.02885 256.745 3.02885C284.434 3.02885 312.124 3.02885 339.813 3.02885C377.589 3.02885 415.142 6.57829 452.884 6.80404C529.003 7.25932 604.937 10.5792 681.089 10.5792C717.68 10.5792 754.217 10.7919 790.784 9.11109C801.922 8.59915 813.226 6.80404 824.349 6.80404"/>
+            </svg>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-label="Toggle navigation" [attr.aria-expanded]="isExpanded" (click)="toggle()">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end" [ngClass]="{ show: isExpanded }">
+            <ul class="navbar-nav flex-grow">
+                <li *ngIf="authService.currentUser && isAdmin" class="nav-item" [routerLinkActive]="['link-active']">
+                    <a class="nav-link" [routerLink]="['/users']">Users</a>
+                </li>
+                <li *ngIf="!authService.currentUser" class="nav-item login" [routerLinkActive]="['link-active']">
+                    <a class="nav-link" [routerLink]="['/login']">Log In</a>
+                </li>
+                <li *ngIf="authService.currentUser" class="nav-item">
+                    <app-nav-profile></app-nav-profile>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

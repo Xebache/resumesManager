@@ -1,0 +1,49 @@
+nav {
+    height: 7.5rem;
+    .navbar-brand {
+        color: #f2f2f2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+
+        svg {
+            width: 17.5rem;
+            stroke: #f2f2f2;
+            stroke-width: 8px;
+            stroke-linecap: round;
+            stroke-linejoin: bevel;
+        }
+
+        &:hover {
+            color: var(--color-main);
+            transition: color 0.8s ease;
+
+            svg {
+                stroke: var(--color-main);
+                transition: stroke 0.8s ease;
+            }
+        }
+    }
+
+    .nav-link {
+        color: #f2f2f2;
+        &:hover {
+            color: #a3a3a3;
+            transition: color 0.8s ease;
+        }
+    }
+
+    .login a {
+        border: none;
+        border-radius: .5rem;
+        padding: .5rem 1rem;
+        background: transparent;
+        color: #f2f2f2;
+        &:hover {
+            background: #666666;
+            transition: background-color 0.8s ease;
+        }
+    }
+}
